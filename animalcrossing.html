@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Animal Crossing - Coding Project</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="icon" type="image/x-icon" href="img/logo-portfolio.png">
+    <link rel="stylesheet" href="css/information.css" />
+  </head>
+  <body class="is-preload">
+    <!-- To Top Scroll -->
+    <button id="toTop" class="fas" title="Go to top">&#xf106;</button>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <div id="main">
+        <div class="inner">
+          <header id="header">
+            <h4><strong>Coding Projects</strong></h4>
+          </header>
+
+          <!-- Content -->
+          <section>
+            <header class="main">
+              <h1>Animal Crossing Finder</h1>
+            </header>
+
+            <span class="image main"><img src="img/banners/Animal Crossing Banner.png" alt="Animal Crossing Banner" /></span>
+
+            <hr class="major" />
+            <h2>Development Process</h2>
+            <p>For this project, I broke it down into a few weeks.</p>
+            <ul>
+              <li>
+                Nov 15, 2021 - Nov 21, 2021: Sketches, wireframe, start Figma
+                file, and learning more about Flutter
+              </li>
+              <li>
+                Nov 22, 2021 - Nov 28, 2021: Prototype (Figma), begin
+                development
+              </li>
+              <li>
+                Nov 29, 2021 - Dec 5, 2021: Keep working on development, some
+                user testing
+              </li>
+              <li>
+                Dec 6, 2021 - Dec 12, 2021: Finish anything that is for
+                development and deliverables. Some user testing.
+              </li>
+              <li>Due: Dec 13, 2021 @ 8AM</li>
+            </ul>
+            <br />
+            <p>
+              The first step was coming up with an idea, which was more
+              difficult than I thought. At the time, I was not sure what I
+              wanted to design. One day, my teammate mentioned Animal Crossing.
+              From there, I thought it would be an interesting app to make with
+              the given API. This game has been with me since my childhood.
+              <br /><br />
+              After coming up with an idea, I came up with a few designs with
+              sketches. With the API I am using, they had many endpoints.
+              However, I decided to stick to 3 different ones: villagers, fish,
+              and bugs. These are some of the few most important parts of the
+              game and what people would like to know as a reference. For my
+              app, I wanted to have the following: bottom navigation, splash,
+              list information, details, and error page.
+              <br /><br />
+              From there, I began working in Figma. One thing that is a bit
+              different from my sketches and Figma file is the details page
+              containing the bottom navigation bar. Also, the Villagers page has
+              their representative color listed in the API.
+              <br /><br />
+              Finally, I moved on to the development process. I struggled at
+              first due to the API endpoint. Luckily, the professor and I solved
+              the problem to continue working. At first, I was only going to
+              load in the fish data and its details when clicked on. However, I
+              was able to add bottom navigation, which allowed me to display
+              villagers and bugs. The final design contains most of the pages
+              and styles initially planned. There is also an errors page,
+              similar to the Figma file.
+              <br /><br />
+              The pages and design that were not part of the final application
+              were the splash page and bottom navigation throughout all the
+              pages. Overall, due to time constraints and having errors while
+              implementing them into the application. Lastly, one thing I did
+              mention is user testing. I did not user test; however, I did show
+              my designs to individuals throughout my development process.
+            </p>
+
+            <hr class="major" />
+            <h2>Artifacts & Links</h2>
+            <ul class="listlink">
+              <li>
+                <a
+                  href="https://www.figma.com/file/RI05vBuPr6M6H68ruDPnyO/Project-3%3A-Animal-Crossing?node-id=11%3A69"
+                  target="_blank"
+                  >Figma Design</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="https://www.figma.com/proto/RI05vBuPr6M6H68ruDPnyO/Project-3%3A-Animal-Crossing?node-id=11%3A94&scaling=scale-down&page-id=0%3A1&starting-point-node-id=11%3A94"
+                  target="_blank"
+                  >Figma Prototype</a
+                >
+              </li>
+
+              <li>
+                <a href="http://acnhapi.com/" target="_blank"
+                  >API Animal Crossing Description</a
+                >
+              </li>
+
+              <li>
+                <a href="http://acnhapi.com/doc" target="_blank"
+                  >API Animal Crossing Documentation</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="https://www.figma.com/community/file/878585965681562011"
+                  target="_blank"
+                  >Material Design Icon</a
+                >
+              </li>
+            </ul>
+            <br />
+            <div class="row">
+              <div class="column">
+                <img
+                  src="img/animalcrossing/Rosare-P3-sketch1.jpg"
+                  alt="Sketch 1"
+                  style="width: 100%"
+                />
+              </div>
+              <div class="column">
+                <img
+                  src="img/animalcrossing/Rosare-P3-sketch2.jpg"
+                  alt="Sketch 2"
+                  style="width: 100%"
+                />
+              </div>
+            </div>
+
+            <hr class="major" />
+            <h2>Features</h2>
+            <p>
+              A user can navigate through the application that contains three
+              different endpoints from the Animal Crossing API. They have a
+              selection of Villagers, Fish, and Bugs. For all three endpoints,
+              there are pieces of data that display upon click. To navigate to
+              different data points, the bottom navigation is available with an
+              icon and name. If an error were to occur, an error message
+              displays, and a picture of the Animal Crossing character: Resetti.
+            </p>
+
+            <hr class="major" />
+            <h2>Successes</h2>
+            <p>
+              My original plan was to include three different data endpoints:
+              villagers, fish, and bugs. They all successfully are listed when
+              clicked on through the bottom navigation. If a user clicks on one
+              of the options, they will be presented with information about the
+              villager, fish, or bug, with an image displayed above.
+            </p>
+
+            <hr class="major" />
+            <h2>Issues</h2>
+            <p>
+              There are no known issues with the current application of loading
+              data. However, there are a few designs that could be better.
+              Additionally, a splash screen and a constant bottom navigation
+              bar, that is not currently implemented. <br /><br />
+              There is an error displayed in the terminal, if a user scrolls too
+              fast. (Error: The provided ScrollController is currently attached
+              to more than one ScrollPosition.) However, this does not affect
+              the data being displayed.<br /><br />
+              All code is currently in main.dart. For better implementation,
+              these ideally would be in separate dart files.
+            </p>
+
+            <hr class="major" />
+            <h2>Future Development</h2>
+            <p>
+              There were a few things I was unable to complete for my final app.
+              One thing I would have liked to add is a splash page. When
+              implementing, I ran into a few problems loading the page and
+              displaying information upon click.<br /><br />
+              There is also a bit of styling that could be better. For example,
+              when it lists the data from the API, there is no spacing. It would
+              have looked a bit cleaner with margins in between.<br /><br />
+              As I mentioned in the development process, the last thing I would
+              have liked to add is bottom navigation that is constant throughout
+              all the pages. It did follow my sketches, which I did not add
+              bottom navigation. However, for a better user experience, it would
+              be nice to have constant bottom navigation. <br /><br />
+              Lastly, it would be nice to load in all the data possible. The
+              Animal Crossing API documentation has many other endpoints that I
+              could use. If I were to implement this, I would remove the bottom
+              navigation and create a hamburger widget. It would be the best way
+              to display the data and create a better user experience. Also, a
+              search page would be nice, to make it easier and quicker for
+              searching purposes.
+            </p>
+
+            <hr class="major" />
+            <h2>View on GitHub</h2>
+            <li class="listlink">
+              <a
+                href="https://github.com/RosareMililani/HybridApp-AnimalCrossing"
+                target="_blank"
+                >Link to GitHub</a
+              >
+            </li>
+          </section>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <div class="inner">
+          <!-- Menu -->
+          <nav id="menu">
+            <header class="major">
+              <h2>Menu</h2>
+            </header>
+            <ul>
+              <li><a href="index.html">Homepage</a></li>
+              <li>
+                <span class="opener">UX Projects</span>
+                <ul>
+                  <li><a href="hcicapstone.html" class="sidebar">HCI Capstone</a></li>
+                  <li><a href="lingotalk.html" class="sidebar">LingoTalk</a></li>
+                  <li>
+                    <a href="smallcommercialagency.html" class="sidebar"
+                      >Small Commercial Agency Research</a
+                    >
+                  </li>
+                  <li><a href="gameboy.html" class="sidebar">Game Boy Prototype</a></li>
+                  <li>
+                    <a href="wixobservation.html" class="sidebar">Wix Field Observation</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Coding Projects</span>
+                <ul>
+                  <li><a href="spinthewheel.html" class="sidebar">IoT Spin the Wheel</a></li>
+                  <li>
+                    <a href="swimmingreaction.html" class="sidebar">Swimming Reaction Time</a>
+                  </li>
+                  <li><a href="arttag.html" class="sidebar">ArtTag</a></li>
+                  <li class="sidelist">
+                    Animal Crossing Hybrid App
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">For Fun</span>
+                <ul>
+                  <li><a href="deardata.html" class="sidebar">Dear Data</a></li>
+                  <li>
+                    <a href="hitomezashi.html" class="sidebar">Hitomezahi & Randomness</a>
+                  </li>
+                  <li><a href="christmas.html" class="sidebar">Christmas Display</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/browser.min.js"></script>
+    <script src="js/breakpoints.min.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

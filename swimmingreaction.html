@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Swimming Reaction Time Prototype - Coding Project</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="icon" type="image/x-icon" href="img/logo-portfolio.png">
+    <link rel="stylesheet" href="css/information.css" />
+  </head>
+  <body class="is-preload">
+    <!-- To Top Scroll -->
+    <button id="toTop" class="fas" title="Go to top">&#xf106;</button>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <div id="main">
+        <div class="inner">
+          <header id="header">
+            <h4><strong>Coding Projects</strong></h4>
+          </header>
+
+          <!-- Content -->
+          <section>
+            <header class="main">
+              <h1>Swimming Reaction Time Prototype</h1>
+            </header>
+
+            <span class="image main"><img src="img/banners/Swimming Reaction Banner.png" alt="Swimming Reaction Banner" /></span>
+
+            <hr class="major" />
+            <h2>Team Members</h2>
+            <ul>
+              <li>
+                <strong>Mililani Rosare - Human-Computer Interaction</strong>
+              </li>
+
+              <li>Emma Thomas - Human-Centered Computing</li>
+            </ul>
+
+            <hr class="major" />
+            <h2>Overview</h2>
+            <p>
+              A project developed for the Mobile Wearable Ubiquitous course at
+              RIT. We wanted to develop an early prototype using an Arduino and
+              various sensors.
+            </p>
+
+            <hr class="major" />
+            <h2>About the Device</h2>
+            <p><strong>Starter(left)</strong></p>
+            <ul>
+              <li>
+                <strong>Start button -</strong> starts the buzzer and light, and
+                sends command, 'START' to python
+              </li>
+              <li>
+                <strong>Buzzer -</strong> goes off for 400ms to start the
+                athlete
+              </li>
+              <li>
+                <strong>LED -</strong> flashes for 400ms to start the athlete
+              </li>
+            </ul>
+            <p><strong>Timer (right)</strong></p>
+            <ul>
+              <li>
+                <strong>Touch sensor -</strong> the timer starts when the second
+                Arduino receives a command from python, and stops when the touch
+                sensor is released
+              </li>
+              <li>
+                <strong>Buzzer -</strong> goes off 3 times if there is a false
+                start
+              </li>
+              <li>
+                <strong>LED -</strong> for testing purposes, to make sure the
+                Arduinos are connected
+              </li>
+            </ul>
+            <br />
+            <div class="row">
+              <div class="column">
+                <img
+                  src="img/swimmingreaction/starter.jpg"
+                  alt="Starter Arduino"
+                  style="width: 75%"
+                />
+              </div>
+              <div class="column">
+                <img
+                  src="img/swimmingreaction/timer.jpg"
+                  alt="Timer Arduino"
+                  style="width: 75%"
+                />
+              </div>
+            </div>
+
+            <h2>Device Demo</h2>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/OluhHXfsxqU?si=vXq1g2FU33ZVa8Tr"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+
+            <h2>Computer Demo</h2>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/PbeUq7h5zK4?si=ES6Hx7BX2LP-zchh"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+
+            <h2>Code Structure</h2>
+            <p><b>Reaction-Time-Starter.ino</b></p>
+            <ul>
+              <li>Flashed the LED and set off the buzzer on button click</li>
+              <li>Sent command “START” to python with serial communication</li>
+            </ul>
+            <p><b>Reaction-Time.py</b></p>
+            <ul>
+              <li>Asks user to input name before starting the system</li>
+              <li>
+                Listens for the “START” command and sends a command to the timer
+                arduino
+              </li>
+              <li>
+                Waits for the timer arduino to send over the reaction time, and
+                determines if it is a false start or not
+              </li>
+              <li>
+                If it is a valid start, adds the data to Firebase and prints to
+                the console.
+              </li>
+            </ul>
+            <p><b>Reaction-Time-Timer.ino</b></p>
+            <ul>
+              <li>
+                Gets the current time with millis() when it receives the command
+                from python
+              </li>
+              <li>
+                Has an interrupt attached to the touch sensor, calls a method to
+                get the end time in millis() when released
+              </li>
+              <li>
+                Calculates RT by subtracting end time from start time, sends it
+                over to python
+              </li>
+            </ul>
+            <p><b>Reaction-Time React App</b></p>
+            <ul>
+              <li>
+                Constantly looks at the Firebase database and updates the
+                selected user and their reaction times with UseEffect() loops
+              </li>
+              <li>
+                The selected-graph property in Firebase is reset to the user's
+                name, so when this is changed, React will change the graph
+              </li>
+              <li>Also contains false start information and current average</li>
+            </ul>
+
+            <h2>Successes</h2>
+            <ul>
+              <li>We got most of our planned system working</li>
+              <li>
+                Our system prints reaction times for a user that appear to be
+                fairly accurate
+              </li>
+              <li>
+                The code takes the user and their time and adds it to a database
+              </li>
+              <li>
+                A react program uses the database to create a graph of the
+                user's times
+              </li>
+            </ul>
+
+            <h2>Setbacks</h2>
+            <ul>
+              <li>
+                Our first attempt at coding it was not working at all, due to
+                the Arduino only being capable of one thing at a time
+              </li>
+              <li>
+                The buzzer would go off for 400 ms, so if the reaction time was
+                less than that, it would not register
+              </li>
+              <li>
+                Since we needed both Arduinos to code and test, we had to always
+                work together, in person, limited the time we could work
+              </li>
+            </ul>
+
+            <h2>Limitations</h2>
+            <ul>
+              <li>
+                A false start is initial movement on block, but we are measuring
+                when the athlete “leaves” the block
+              </li>
+              <ul>
+                <li>
+                  Later prototypes would have to use a force sensor or an
+                  accelerometer to determine the first initial movements by the
+                  athlete.
+                </li>
+              </ul>
+              <li>Arduino can only do one thing at a time</li>
+              <ul>
+                <li>
+                  Solution: Connect two Arduino boards through one computer
+                </li>
+              </ul>
+              <li>Unknown error time between boards</li>
+              <li>Only one system, not large enough or waterproof</li>
+              <ul>
+                <li>Rely on tests using hands and not full starts</li>
+              </ul>
+            </ul>
+
+            <h2>Next Steps</h2>
+            <ul>
+              <li>Each block with own system, all tied into same database</li>
+              <ul>
+                <li>
+                  One starting system, 8 touch systems with a light and buzzer
+                </li>
+                <li>Each lane tied to the swimmers name and lane</li>
+              </ul>
+              <li>
+                Phone or iPad app for the coach and swimmer to see right after
+                their start
+              </li>
+              <li>
+                Research waterproof material and wiring to make a more advanced
+                prototype
+              </li>
+              <li>
+                Look into devices and alternatives to the Arduino, so that we
+                can run tasks simultaneously
+              </li>
+            </ul>
+
+            <br>
+            <br>
+            <h2>Paper:</h2>
+            <a
+              href="documents/Swimming_Reaction_Time_for_Analysis.pdf"
+              download="Swimming_Reaction_Time_for_Analysis"
+            >
+              <button class="btn">
+                <i class="fa fa-download"></i> Download Paper
+              </button>
+            </a>
+          </section>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <div class="inner">
+
+          <!-- Menu -->
+          <nav id="menu">
+            <header class="major">
+              <h2>Menu</h2>
+            </header>
+            <ul>
+              <li><a href="index.html">Homepage</a></li>
+              <li>
+                <span class="opener">UX Projects</span>
+                <ul>
+                  <li><a href="hcicapstone.html" class="sidebar">HCI Capstone</a></li>
+                  <li><a href="lingotalk.html" class="sidebar">LingoTalk</a></li>
+                  <li>
+                    <a href="smallcommercialagency.html" class="sidebar"
+                      >Small Commercial Agency Research</a
+                    >
+                  </li>
+                  <li><a href="gameboy.html" class="sidebar">Game Boy Prototype</a></li>
+                  <li>
+                    <a href="wixobservation.html" class="sidebar">Wix Field Observation</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Coding Projects</span>
+                <ul>
+                  <li><a href="spinthewheel.html" class="sidebar">IoT Spin the Wheel</a></li>
+                  <li class="sidelist">
+                    Swimming Reaction Time
+                  </li>
+                  <li><a href="arttag.html" class="sidebar">ArtTag</a></li>
+                  <li>
+                    <a href="animalcrossing.html" class="sidebar">Animal Crossing Hybrid App</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">For Fun</span>
+                <ul>
+                  <li><a href="deardata.html" class="sidebar">Dear Data</a></li>
+                  <li>
+                    <a href="hitomezashi.html" class="sidebar">Hitomezahi & Randomness</a>
+                  </li>
+                  <li><a href="christmas.html" class="sidebar">Christmas Display</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/browser.min.js"></script>
+    <script src="js/breakpoints.min.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
